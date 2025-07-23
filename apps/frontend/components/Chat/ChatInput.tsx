@@ -12,7 +12,6 @@ import {
   MessageAddRes,
 } from "../../utils/message";
 import { SendIcon } from "./SendIcon";
-import { t } from "@royale/common";
 
 export default function ChatInput({
   messages,
@@ -127,7 +126,7 @@ export default function ChatInput({
           background: "none",
           outline: "none",
         }}
-        placeholder={t('chat.placeholder')}
+        placeholder="说出内心的声音"
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={(e) => {
           if (e.key == "Enter" && !e.shiftKey && !loading) {

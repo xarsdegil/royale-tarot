@@ -15,7 +15,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { KeyboardEventHandler } from "react";
-import { t } from "@royale/common";
 
 export default function Question({
   question,
@@ -62,7 +61,7 @@ export default function Question({
       >
         <ModalOverlay />
         <ModalContent bg={bgColor}>
-          <ModalHeader>{t('chat.placeholder')}</ModalHeader>
+          <ModalHeader>请输入你要占卜的问题</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <FormControl isInvalid={isError}>
@@ -73,9 +72,9 @@ export default function Question({
                 onKeyUp={handleKeyUp}
               />
               {!isError ? (
-                <FormHelperText>Remember your question while drawing.</FormHelperText>
+                <FormHelperText>记得抽牌时在心里默念问题。</FormHelperText>
               ) : (
-                <FormErrorMessage>Please enter a question</FormErrorMessage>
+                <FormErrorMessage>请输入问题</FormErrorMessage>
               )}
             </FormControl>
           </ModalBody>
@@ -86,7 +85,7 @@ export default function Question({
               _hover={{ bgColor: buttonHoverColor }}
               _active={{ bgColor: buttonActiveColor }}
             >
-              {t('spread.start')}
+              确定
             </Button>
           </ModalFooter>
         </ModalContent>

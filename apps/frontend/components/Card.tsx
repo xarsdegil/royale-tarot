@@ -1,5 +1,4 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { t } from "@royale/common";
 import {
   Box,
   Button,
@@ -98,7 +97,9 @@ function Card({
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{cards[index].name}</ModalHeader>
+          <ModalHeader>
+            {cards[index].name + " " + cards[index].translation}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <HStack gap="20px">
@@ -108,15 +109,15 @@ function Card({
                 src={imgPrefix + cards[index].link}
               ></Img>
               <VStack align="flex-start">
-                <Heading fontSize="lg">Description: </Heading>
+                <Heading fontSize="lg">简介: </Heading>
                 <Text>{cards[index].description}</Text>
-                <Heading fontSize="lg">Upright: </Heading>
+                <Heading fontSize="lg">正位: </Heading>
                 <Text>{cards[index].normal}</Text>
-                <Heading fontSize="lg">Reversed: </Heading>
+                <Heading fontSize="lg">逆位: </Heading>
                 <Text>{cards[index].reversed}</Text>
-                <Heading fontSize="lg">More info: </Heading>
+                <Heading fontSize="lg">详细介绍: </Heading>
                 <Link href={cards[index].detail} isExternal>
-                  {t('card.view')}
+                  点此查看
                   <ExternalLinkIcon mx="2px" />
                 </Link>
               </VStack>
@@ -124,7 +125,7 @@ function Card({
           </ModalBody>
           <ModalFooter>
             <Button variant="ghost" onClick={closeInfo}>
-              {t('spread.close')}
+              关闭
             </Button>
           </ModalFooter>
         </ModalContent>

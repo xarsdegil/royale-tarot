@@ -7,7 +7,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
-import { DivinationElements, Message, t } from "@royale/common";
+import { DivinationElements, Message } from "../../types";
 import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
 
@@ -43,7 +43,7 @@ export default function ChatBox({
     const hasUnflipped = flipStates.some((state) => !state);
     if (divinationElements.question.trim() === "") {
       toast({
-        title: t('spread.inputTip'),
+        title: "请先输入问题再进行占卜哦~",
         status: "warning",
         duration: 1000,
         position: "top",
@@ -53,7 +53,7 @@ export default function ChatBox({
       });
     } else if (hasUnflipped) {
       toast({
-        title: t('spread.flipTip'),
+        title: "请先翻开所有卡牌再进行占卜哦~",
         status: "warning",
         duration: 1000,
         position: "top",
@@ -94,7 +94,7 @@ export default function ChatBox({
           fontWeight={"bold"}
           fontSize={"lg"}
         >
-          {t('spread.ai')}
+          AI 占卜
         </Flex>
       )}
       <Box position={"relative"} flexGrow={1} overflow={"hidden"}>
@@ -138,7 +138,7 @@ export default function ChatBox({
         ) : (
           <Center w={"100%"} position={"absolute"} bottom={"50px"}>
             <Button onClick={handleClickStart} colorScheme="teal" size={"lg"}>
-              {t('spread.start')}
+              开始占卜
             </Button>
           </Center>
         )}

@@ -19,7 +19,6 @@ import NextLink from "next/link";
 import { ChangeEventHandler, KeyboardEventHandler, useState } from "react";
 import spreads from "../data/spreads.json";
 import SpreadInfo from "./SpreadInfo";
-import { t } from "@royale/common";
 
 export default function SpreadList() {
   const [modalTitle, setTitle] = useState("");
@@ -143,7 +142,7 @@ export default function SpreadList() {
         <Input
           value={searchText}
           onChange={handleInputChange}
-          placeholder={t('spread.choose')}
+          placeholder="搜索牌阵"
           onKeyUp={onKeyup}
         />
         <IconButton

@@ -34,7 +34,6 @@ import ModeChangeButton from "./ModeChangeButton";
 import Question from "./Question";
 import SpreadInfo from "./SpreadInfo";
 import SpreadList from "./SpreadList";
-import { t } from "@royale/common";
 
 const CommonBackground = ({
   children,
@@ -239,7 +238,7 @@ const CommonBackground = ({
         <DrawerOverlay />
         <DrawerContent bgColor={bgColor}>
           <DrawerCloseButton />
-          <DrawerHeader>{t('spread.choose')}</DrawerHeader>
+          <DrawerHeader>选择牌阵</DrawerHeader>
           <DrawerBody p={0}>
             <SpreadList />
           </DrawerBody>
@@ -253,7 +252,7 @@ const CommonBackground = ({
           <DrawerContent bgColor={bgColor} h={windowHeight - 50}>
             <DrawerCloseButton />
             <DrawerHeader bg={drawerColor} color={"white"}>
-              {t('spread.ai')}
+              AI 占卜
             </DrawerHeader>
             <DrawerBody bg={drawerColor} pt={0} px={2} pb={2}>
               <ChatBox

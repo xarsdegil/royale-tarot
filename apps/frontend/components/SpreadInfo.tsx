@@ -14,7 +14,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { t } from "@royale/common";
 
 interface params {
   name: string;
@@ -36,7 +35,7 @@ export default function SpreadInfo({
   const confirmButton = (
     <Link href={{ pathname: link }}>
       <Button colorScheme="teal" mr={3}>
-        {t('spread.use')}
+        就它了
       </Button>
     </Link>
   );
@@ -60,12 +59,12 @@ export default function SpreadInfo({
           {guide ? (
             <VStack align={"flex-start"} padding={"2em"}>
               <Img objectFit="contain" src={guide}></Img>
-              <Heading fontSize="lg">Description: </Heading>
+              <Heading fontSize="lg">简介: </Heading>
               <Text>{description}</Text>
             </VStack>
           ) : (
             <VStack align={"flex-start"} padding={"2em"}>
-              <Heading fontSize="lg">Description: </Heading>
+              <Heading fontSize="lg">简介: </Heading>
               <Text>{description}</Text>
             </VStack>
           )}
@@ -78,7 +77,7 @@ export default function SpreadInfo({
             _active={{ bg: buttonActiveColor }}
             onClick={onClose}
           >
-            {t('spread.close')}
+            关闭
           </Button>
         </ModalFooter>
       </ModalContent>
